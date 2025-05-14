@@ -10,19 +10,19 @@ from tkinter import ttk
 import sv_ttk
 import pyperclip
 from AutoEntry import AutocompleteEntry
-# print(EasyID3.valid_keys.keys())
+import Local_Vars
 
-db_path = r"C:\Users\cpannell\Documents\GitHub\Tag-Editing\M Test Folder\track_library_database.db"
+db_path = Local_Vars.DATABASE_PATH
 if not os.path.exists(db_path):
-    db_path = r"C:\Users\cpannell\Documents\GitHub\Tag-Editing\M Test Folder\track_library_database.db"
+    db_path = Local_Vars.DATABASE_PATH_HOME_PC
 
-local_tracks_folder_path = r"H:\DJing\Local Tracks"
+local_tracks_folder_path = Local_Vars.ALL_TRACKS_PATH
 
 xpad = 5
 ypad = 5
 
 root = tk.Tk()
-root.title("GUI Testing")
+root.title(Local_Vars.GUI_TITLE)
 sv_ttk.set_theme("dark")
 
 # Configure the root window's columns
@@ -593,38 +593,3 @@ if __name__ == "__main__":
         tag_editor_gui.display_tag_db()
 
     display_gui()
-
-    def call_add_tracks_to_db():
-        add_tracks_to_db(db_path, local_tracks_folder_path)
-    
-    # call_add_tracks_to_db()
-
-    # test_file_path = fr"C:\Users\cpannell\Documents\GitHub\HJA-AHK-Scripts\M Test Folder\Afdez - bau bau #jerseyclub.aiff"
-    # test_file_path = fr"C:\Users\cpannell\Documents\GitHub\HJA-AHK-Scripts\M Test Folder\_PLEEG - Home [NCS Release].mp3"
-    # test_file_path = fr"C:\Users\cpannell\Documents\GitHub\HJA-AHK-Scripts\M Test Folder\3TC - FOOTMAHI 2023 - 11 OL DIRTY FOOTMAHI.aiff"
-    # test_file_path = fr"C:\Users\cpannell\Documents\GitHub\HJA-AHK-Scripts\M Test Folder\$NOT, iann dior - Like Me (feat. iann dior).flac"
-
-    # test_folder_path = r"C:\Users\cpannell\Documents\GitHub\HJA-AHK-Scripts\M Test Folder"
-    
-    # add_tracks_to_db(test_db_path, test_folder_path)
-
-    # new_genre = "Hip Hop"  # Replace with the desired genre
-    # for root, dirs, files in os.walk(test_folder_path):
-    #     for file in files:
-    #         file_path = os.path.join(root, file)
-    #         print(f"\nProcessing file: {file_path}")
-    #         display_genre(file_path)
-    # update_genre(test_file_path, new_genre)
-
-    # display_tags(test_file_path)
-    
-    # test_tags_to_return = ["title", "genre"]
-    # test_tags = return_tags(test_file_path, test_tags_to_return)
-    # print(f"\nTags for {test_file_path}:")
-    # for tag, value in test_tags.items():
-    #     print(f"{tag}: {value}")
-    # print("\n\nComplete.")
-
-
-
-# Test Track Data:
